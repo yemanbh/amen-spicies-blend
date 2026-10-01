@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Amen Spice Blend (አሜን ባልትና) — Ethiopian spice blends, flours and porridge mixes.">
+  <title>Amen Spice Blend — Ethiopian spices and flours</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="#top" aria-label="Amen Spice Blend home">
+      <img src="assets/logo.jpeg" alt="" width="56" height="56">
+      <span>Amen Spice Blend<small>አሜን ባልትና</small></span>
+    </a>
+    <nav class="cat-nav" id="catNav" aria-label="Product categories"></nav>
+  </header>
+
+  <main id="top">
+    <section class="intro">
+      <h1>Ethiopian spice blends, flours and porridge mixes</h1>
+      <p>Browse our range below. Tap any product to see what's in it. To order, message us on WhatsApp.</p>
+      <a class="whatsapp" href="https://wa.me/251921259074" target="_blank" rel="noopener">WhatsApp +251 921 259 074</a>
+    </section>
+
+    <div id="catalog"></div>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/logo.jpeg" alt="Amen Spice Blend logo" width="90" height="90">
+    <div>
+      <p><strong>Amen Spice Blend</strong> · አሜን ባልትና</p>
+      <p>Orders and questions: <a href="https://wa.me/251921259074" target="_blank" rel="noopener">WhatsApp +251 921 259 074</a></p>
+      <p class="fine">© 2026 Amen Spice Blend. Online ordering is not available yet.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+      <button class="modal-close" data-close aria-label="Close">×</button>
+      <div class="modal-img" id="mImg"></div>
+      <div class="modal-body">
+        <p class="modal-cat" id="mCat"></p>
+        <h2 id="mTitle"></h2>
+        <p class="modal-price" id="mPrice"></p>
+        <p id="mDesc"></p>
+        <h3>Ingredients</h3>
+        <ul id="mIngredients"></ul>
+        <p class="modal-note" id="mNote"></p>
+        <a class="whatsapp" id="mOrder" target="_blank" rel="noopener">Ask about this on WhatsApp</a>
+      </div>
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
