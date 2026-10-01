@@ -61,6 +61,8 @@ a{color:inherit}
 .modal-body{padding:30px 28px}
 .modal-cat{margin:0 0 4px;color:var(--brown);font-weight:600;font-size:14px}
 .modal-body h2{font-family:var(--display);font-size:30px;line-height:1.1;margin:0 0 8px;color:var(--green-dark)}
+#mDescEn{margin:8px 0 0;color:var(--muted);font-size:15px}
+#mDesc{font-family:'Noto Sans Ethiopic','Nyala',var(--body);line-height:1.8;font-size:16px}
 .modal-price{font-weight:700;font-size:18px;margin:0 0 14px}
 .modal-body h3{font-size:16px;margin:20px 0 8px;border-bottom:1px solid var(--line);padding-bottom:6px}
 #mIngredients{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}

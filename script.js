@@ -3,6 +3,7 @@
    - price: number in pounds (change CURRENCY below for another currency)
    - image: optional path, e.g. 'assets/products/shiro.jpg'.
             If the file is missing, a drawn jar is shown instead.
+   - desc: Amharic description, descEn: English description
    - ingredients: list shown when a customer clicks the product
    ============================================================ */
 const CURRENCY = '£';
@@ -17,41 +18,56 @@ const categories = [
 
 const products = [
   { id: 'berbere', cat: 'blends', name: 'Berbere Spice Blend', price: 8.95, weight: '250 g', tone: '#a83b28',
-    image: 'assets/berbere-card.jpeg', fit: 'contain',
-    desc: 'The red heart of Ethiopian cooking. Deep heat balanced with garlic, ginger and aromatic herbs.',
+    image: 'assets/products/berbere.jpg',
+    descEn: 'The red heart of Ethiopian cooking. Deep heat balanced with garlic, ginger and aromatic herbs.',
+    descEn: 'Finely milled chickpea powder seasoned for shiro wot. Whisk into water and simmer.',
+    desc: 'በደቃቁ የተፈጨ፣ ለሽሮ ወጥ የተቀመመ የሽምብራ ዱቄት። በውሃ በትነው አብስለው ይጠቀሙ።',
     ingredients: ['Ground pepper (berbere)', 'Onions', 'Garlic', 'Ginger', 'Rosemary', 'Cumin', 'Basil', 'Rue', 'Mixed dried spices', 'White cumin', 'Black pepper', 'Cloves', 'Nutmeg', 'Black cumin', 'Long pepper', 'Black cardamom'] },
-  { id: 'mitmita', cat: 'blends', name: 'Mitmita', price: 7.95, weight: '200 g', tone: '#8d2c22',
-    desc: 'A fiery orange-red blend, traditionally served with kitfo and raw or grilled meats.',
+  { id: 'mitmita', cat: 'blends', name: 'Mitmita', price: 7.95, weight: '200 g', tone: '#8d2c22', image: 'assets/products/mitmita.jpg',
+    descEn: 'A fiery orange-red blend, traditionally served with kitfo and raw or grilled meats.',
+    desc: 'ብርቱ ቀይ-ብርቱካናማ ቅመም። ከክትፎና ከጥብስ ሥጋ ጋር ይቀርባል።',
     ingredients: ['Dried bird\u2019s eye chilli', 'Korerima (Ethiopian cardamom)', 'Cloves', 'Salt'], confirm: true },
   { id: 'mekelesha', cat: 'blends', name: 'Mekelesha', price: 7.95, weight: '100 g', tone: '#7e5c3e',
-    desc: 'A warm, aromatic finishing blend stirred into wot at the end of cooking.',
+    descEn: 'A warm, aromatic finishing blend stirred into wot at the end of cooking.',
+    desc: 'በወጥ መጨረሻ ላይ የሚጨመር፣ መዓዛ ያለው ሞቅ ያለ ቅመም።',
     ingredients: ['Cinnamon', 'Cloves', 'Korerima (Ethiopian cardamom)', 'Nutmeg', 'Black pepper'], confirm: true },
   { id: 'alicha', cat: 'blends', name: 'Alicha Blend', price: 7.95, weight: '150 g', tone: '#b18a3f',
-    desc: 'A mild, golden blend for alicha wot. All the flavour, no chilli heat.',
+    descEn: 'A mild, golden blend for alicha wot. All the flavour, no chilli heat.',
+    desc: 'ለአልጫ ወጥ የሚሆን ለስላሳ ወርቃማ ቅመም። ሙሉ ጣዕም አለው፤ ግን ብርቱ አይደለም።',
     ingredients: ['Turmeric', 'Ginger', 'Garlic', 'Black cumin', 'Cardamom'], confirm: true },
 
-  { id: 'shiro', cat: 'shiro', name: 'Shiro Powder', price: 6.95, weight: '500 g', tone: '#8a6948',
+  { id: 'shiro', cat: 'shiro', name: 'Shiro Powder', price: 6.95, weight: '500 g', tone: '#8a6948', image: 'assets/products/shiro.jpg',
     desc: 'Finely milled chickpea powder seasoned for shiro wot. Whisk into water and simmer.',
     ingredients: ['Roasted chickpea flour', 'Broad bean flour', 'Berbere', 'Garlic', 'Ginger', 'Onion', 'Salt'], confirm: true },
   { id: 'shiro-spicy', cat: 'shiro', name: 'Spicy Shiro (Shiro Tegabino mix)', price: 7.50, weight: '500 g', tone: '#9a5a36',
-    desc: 'The same smooth shiro with extra berbere for a hotter pot.',
+    descEn: 'The same smooth shiro with extra berbere for a hotter pot.',
+    desc: 'ተጨማሪ በርበሬ የተጨመረበት፣ ለይበልጥ ብርቱ ሽሮ የሚሆን ዱቄት።',
     ingredients: ['Roasted chickpea flour', 'Berbere', 'Garlic', 'Ginger', 'Fenugreek', 'Salt'], confirm: true },
 
-  { id: 'genfo', cat: 'flours', name: 'Genfo Flour', price: 5.95, weight: '1 kg', tone: '#c2a15e',
-    desc: 'Flour for genfo, the thick Ethiopian porridge eaten with spiced butter and berbere.',
+  { id: 'genfo', cat: 'flours', name: 'Genfo Flour', price: 5.95, weight: '1 kg', tone: '#c2a15e', image: 'assets/products/genfo.jpg',
+    descEn: 'Flour for genfo, the thick Ethiopian porridge eaten with spiced butter and berbere.',
+    desc: 'በቅቤና በበርበሬ የሚበላ ወፍራም የኢትዮጵያ ገንፎ ለማዘጋጀት የሚሆን ዱቄት።',
     ingredients: ['Barley flour'], confirm: true },
   { id: 'besso', cat: 'flours', name: 'Besso', price: 5.50, weight: '500 g', tone: '#a98a52',
-    desc: 'Roasted barley flour. Mix with water, honey or spiced butter for a filling traditional drink or snack.',
+    descEn: 'Roasted barley flour. Mix with water, honey or spiced butter for a filling traditional drink or snack.',
+    desc: 'የተቆላ የገብስ ዱቄት። ከውሃ፣ ከማር ወይም ከንጹህ ቅቤ ጋር ተደባልቆ የሚበላ ወይም የሚጠጣ ባህላዊ ምግብ።',
     ingredients: ['Roasted barley flour'], confirm: true },
-  { id: 'teff', cat: 'flours', name: 'Teff Flour', price: 6.50, weight: '1 kg', tone: '#8c684a',
-    desc: 'Whole-grain teff flour, the base of injera.',
+  { id: 'atmit', cat: 'flours', name: 'Atmit', price: 5.50, weight: '500 g', tone: '#b9a27a', image: 'assets/products/mtn.jpg',
+    descEn: 'A nourishing flour for atmit, the smooth Ethiopian porridge drink served warm and often sweetened or spiced.',
+    desc: 'ለአጥሚት የሚሆን ዱቄት። ለስላሳና ሞቅ ብሎ የሚጠጣ የኢትዮጵያ ባህላዊ ገንፎ መጠጥ።',
+    ingredients: ['Roasted barley flour', 'Oat flour', 'Roasted flaxseed'], confirm: true },
+  { id: 'teff', cat: 'flours', name: 'Teff Flour', price: 6.50, weight: '1 kg', tone: '#8c684a', image: 'assets/products/teff.jpg',
+    descEn: 'Whole-grain teff flour, the base of injera.',
+    desc: 'የእንጀራ መሠረት የሆነ ሙሉ የጤፍ ዱቄት።',
     ingredients: ['Teff flour'], confirm: true },
 
   { id: 'korerima', cat: 'singles', name: 'Korerima (Ethiopian cardamom)', price: 7.50, weight: '50 g', tone: '#735735',
-    desc: 'Large aromatic pods with a smoky, camphor-like warmth.',
+    descEn: 'Large aromatic pods with a smoky, camphor-like warmth.',
+    desc: 'ጭስ መሰል ሞቅ ያለ ጣዕምና ጠንካራ መዓዛ ያላቸው ትልልቅ የኮረሪማ ፍሬዎች።',
     ingredients: ['Korerima pods'], confirm: true },
   { id: 'ginger', cat: 'singles', name: 'Ground Ginger', price: 5.50, weight: '100 g', tone: '#b66d3d',
-    desc: 'Warm, sharp ground ginger for sauces, tea and spice blends.',
+    descEn: 'Warm, sharp ground ginger for sauces, tea and spice blends.',
+    desc: 'ለወጥ፣ ለሻይና ለቅመም ድብልቆች የሚሆን የተፈጨ ዝንጅብል።',
     ingredients: ['Ground ginger'], confirm: true }
 ];
 
@@ -92,7 +108,7 @@ function openProduct(id) {
   $('#mCat').textContent = categories.find(c => c.id === p.cat).name;
   $('#mTitle').textContent = p.name;
   $('#mPrice').textContent = `${money(p.price)} · ${p.weight}`;
-  $('#mDesc').textContent = p.desc;
+  $('#mDesc').textContent = p.desc; $('#mDesc').lang = 'am'; $('#mDescEn').textContent = p.descEn;
   $('#mIngredients').innerHTML = p.ingredients.map(i => `<li>${i}</li>`).join('');
   $('#mNote').textContent = p.confirm ? 'Typical recipe. Final ingredients may vary by batch, please check with us if you have allergies.' : 'Please check with us if you have allergies.';
   $('#mOrder').href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hello, I would like to ask about: ' + p.name)}`;
