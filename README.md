@@ -14,9 +14,9 @@ Open `script.js` in Notepad or VS Code. The product list is at the top. Change n
 weights and ingredients, save, then refresh the browser.
 
 ## Add product photos
-1. Put the image in `assets/products/` (for example `shiro.jpg`).
-2. In `script.js`, add `image: 'assets/products/shiro.jpg'` to that product.
-Products without a photo show a drawn jar.
+Name the photo after the product id and put it in `assets/products/`. It appears automatically.
+Ids: berbere, mitmita, mekelesha, alicha, shiro, shiro-spicy, genfo, besso, atmit, teff, korerima, ginger.
+Example: `besso.jpg`. jpg, jpeg, png and webp all work. Products without a photo show the Amen logo.
 
 ## Publish later
 Upload the whole folder to any static host (Netlify, GitHub Pages, Cloudflare Pages).

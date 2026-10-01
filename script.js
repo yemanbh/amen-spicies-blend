@@ -1,8 +1,8 @@
 /* ============================================================
    EDIT YOUR PRODUCTS HERE
    - price: number in pounds (change CURRENCY below for another currency)
-   - image: optional path, e.g. 'assets/products/shiro.jpg'.
-            If the file is missing, a drawn jar is shown instead.
+   - photo: put a file named after the product id in assets/products/
+            (e.g. shiro.jpg). If missing, the Amen logo is shown.
    - desc: Amharic description, descEn: English description
    - ingredients: list shown when a customer clicks the product
    ============================================================ */
@@ -18,12 +18,12 @@ const categories = [
 
 const products = [
   { id: 'berbere', cat: 'blends', name: 'Berbere Spice Blend', price: 8.95, weight: '250 g', tone: '#a83b28',
-    image: 'assets/products/berbere.jpg',
+   
     descEn: 'The red heart of Ethiopian cooking. Deep heat balanced with garlic, ginger and aromatic herbs.',
     descEn: 'Finely milled chickpea powder seasoned for shiro wot. Whisk into water and simmer.',
     desc: 'በደቃቁ የተፈጨ፣ ለሽሮ ወጥ የተቀመመ የሽምብራ ዱቄት። በውሃ በትነው አብስለው ይጠቀሙ።',
     ingredients: ['Ground pepper (berbere)', 'Onions', 'Garlic', 'Ginger', 'Rosemary', 'Cumin', 'Basil', 'Rue', 'Mixed dried spices', 'White cumin', 'Black pepper', 'Cloves', 'Nutmeg', 'Black cumin', 'Long pepper', 'Black cardamom'] },
-  { id: 'mitmita', cat: 'blends', name: 'Mitmita', price: 7.95, weight: '200 g', tone: '#8d2c22', image: 'assets/products/mitmita.jpg',
+  { id: 'mitmita', cat: 'blends', name: 'Mitmita', price: 7.95, weight: '200 g', tone: '#8d2c22',
     descEn: 'A fiery orange-red blend, traditionally served with kitfo and raw or grilled meats.',
     desc: 'ብርቱ ቀይ-ብርቱካናማ ቅመም። ከክትፎና ከጥብስ ሥጋ ጋር ይቀርባል።',
     ingredients: ['Dried bird\u2019s eye chilli', 'Korerima (Ethiopian cardamom)', 'Cloves', 'Salt'], confirm: true },
@@ -36,7 +36,7 @@ const products = [
     desc: 'ለአልጫ ወጥ የሚሆን ለስላሳ ወርቃማ ቅመም። ሙሉ ጣዕም አለው፤ ግን ብርቱ አይደለም።',
     ingredients: ['Turmeric', 'Ginger', 'Garlic', 'Black cumin', 'Cardamom'], confirm: true },
 
-  { id: 'shiro', cat: 'shiro', name: 'Shiro Powder', price: 6.95, weight: '500 g', tone: '#8a6948', image: 'assets/products/shiro.jpg',
+  { id: 'shiro', cat: 'shiro', name: 'Shiro Powder', price: 6.95, weight: '500 g', tone: '#8a6948',
     desc: 'Finely milled chickpea powder seasoned for shiro wot. Whisk into water and simmer.',
     ingredients: ['Roasted chickpea flour', 'Broad bean flour', 'Berbere', 'Garlic', 'Ginger', 'Onion', 'Salt'], confirm: true },
   { id: 'shiro-spicy', cat: 'shiro', name: 'Spicy Shiro (Shiro Tegabino mix)', price: 7.50, weight: '500 g', tone: '#9a5a36',
@@ -44,7 +44,7 @@ const products = [
     desc: 'ተጨማሪ በርበሬ የተጨመረበት፣ ለይበልጥ ብርቱ ሽሮ የሚሆን ዱቄት።',
     ingredients: ['Roasted chickpea flour', 'Berbere', 'Garlic', 'Ginger', 'Fenugreek', 'Salt'], confirm: true },
 
-  { id: 'genfo', cat: 'flours', name: 'Genfo Flour', price: 5.95, weight: '1 kg', tone: '#c2a15e', image: 'assets/products/genfo.jpg',
+  { id: 'genfo', cat: 'flours', name: 'Genfo Flour', price: 5.95, weight: '1 kg', tone: '#c2a15e',
     descEn: 'Flour for genfo, the thick Ethiopian porridge eaten with spiced butter and berbere.',
     desc: 'በቅቤና በበርበሬ የሚበላ ወፍራም የኢትዮጵያ ገንፎ ለማዘጋጀት የሚሆን ዱቄት።',
     ingredients: ['Barley flour'], confirm: true },
@@ -52,11 +52,11 @@ const products = [
     descEn: 'Roasted barley flour. Mix with water, honey or spiced butter for a filling traditional drink or snack.',
     desc: 'የተቆላ የገብስ ዱቄት። ከውሃ፣ ከማር ወይም ከንጹህ ቅቤ ጋር ተደባልቆ የሚበላ ወይም የሚጠጣ ባህላዊ ምግብ።',
     ingredients: ['Roasted barley flour'], confirm: true },
-  { id: 'atmit', cat: 'flours', name: 'Atmit', price: 5.50, weight: '500 g', tone: '#b9a27a', image: 'assets/products/mtn.jpg',
+  { id: 'atmit', cat: 'flours', name: 'Atmit', price: 5.50, weight: '500 g', tone: '#b9a27a',
     descEn: 'A nourishing flour for atmit, the smooth Ethiopian porridge drink served warm and often sweetened or spiced.',
     desc: 'ለአጥሚት የሚሆን ዱቄት። ለስላሳና ሞቅ ብሎ የሚጠጣ የኢትዮጵያ ባህላዊ ገንፎ መጠጥ።',
     ingredients: ['Roasted barley flour', 'Oat flour', 'Roasted flaxseed'], confirm: true },
-  { id: 'teff', cat: 'flours', name: 'Teff Flour', price: 6.50, weight: '1 kg', tone: '#8c684a', image: 'assets/products/teff.jpg',
+  { id: 'teff', cat: 'flours', name: 'Teff Flour', price: 6.50, weight: '1 kg', tone: '#8c684a',
     descEn: 'Whole-grain teff flour, the base of injera.',
     desc: 'የእንጀራ መሠረት የሆነ ሙሉ የጤፍ ዱቄት።',
     ingredients: ['Teff flour'], confirm: true },
@@ -75,14 +75,17 @@ const products = [
 const $ = s => document.querySelector(s);
 const money = n => CURRENCY + n.toFixed(2);
 
-function jarSVG(p) {
-  const word = p.name.split(' ')[0].toUpperCase();
-  return `<div class="jar" style="--tone:${p.tone}"><i></i><b><em>AMEN</em><strong>${word}</strong></b></div>`;
+/* Product photos are found automatically by product id:
+   assets/products/<id>.jpg (also .jpeg, .png, .webp). No photo = shows the Amen logo. */
+const EXTS = ['jpg', 'jpeg', 'png', 'webp'];
+function imgFallback(img) {
+  const n = +img.dataset.step + 1;
+  if (n < EXTS.length) { img.dataset.step = n; img.src = img.dataset.base + '.' + EXTS[n]; }
+  else { img.onerror = null; img.src = 'assets/logo.jpeg'; img.classList.add('placeholder'); }
 }
 function imageHTML(p, cls) {
-  if (!p.image) return jarSVG(p);
-  return `<img class="${cls} ${p.fit === 'contain' ? 'contain' : ''}" src="${p.image}" alt="${p.name}" loading="lazy"
-          onerror="this.outerHTML=this.dataset.fallback" data-fallback='${jarSVG(p).replace(/'/g, '&#39;')}'>`;
+  const base = 'assets/products/' + p.id;
+  return `<img class="${cls}" src="${base}.jpg" alt="${p.name}" data-base="${base}" data-step="0" onerror="imgFallback(this)">`;
 }
 
 function render() {
