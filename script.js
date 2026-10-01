@@ -1,79 +1,90 @@
 /* ============================================================
    EDIT YOUR PRODUCTS HERE
-   - price: number in pounds (change CURRENCY below for another currency)
    - photo: put a file named after the product id in assets/products/
             (e.g. shiro.jpg). If missing, the Amen logo is shown.
    - desc: Amharic description, descEn: English description
    - ingredients: list shown when a customer clicks the product
    ============================================================ */
-const CURRENCY = '£';
 const WHATSAPP = '251921259074';
 
 const categories = [
   { id: 'blends', name: 'Spice blends', blurb: 'Ready-made blends for stews, meats and vegetables.' },
   // { id: 'shiro',  name: 'Shiro',        blurb: 'Smooth chickpea-based powder for everyday shiro wot.' },
   { id: 'flours', name: 'Flours and porridge', blurb: 'Genfo, besso and other staples from the grain store.' },
-  { id: 'singles', name: 'Single spices', blurb: 'Whole and ground spices, sold on their own.' }
+  { id: 'singles', name: 'Single spices', blurb: 'Whole and ground spices, sold on their own.' },
+  { id: 'others', name: 'Others', blurb: 'Ethiopian honey, butter and coffee.' }
 ];
 
 const products = [
-  { id: 'berbere', cat: 'blends', name: 'Berbere Spice Blend (በርበሬ)', price: 8.95, weight: '250 g', tone: '#a83b28',
+  { id: 'berbere', cat: 'blends', name: 'Berbere Spice Blend (በርበሬ)', tone: '#a83b28',
    
     descEn: 'The red heart of Ethiopian cooking. Deep heat balanced with garlic, ginger and aromatic herbs.',
-    descEn: 'Finely milled chickpea powder seasoned for shiro wot. Whisk into water and simmer.',
-    desc: 'በደቃቁ የተፈጨ፣ ለሽሮ ወጥ የተቀመመ የሽምብራ ዱቄት። በውሃ በትነው አብስለው ይጠቀሙ።',
+    desc: 'የኢትዮጵያ ምግብ ዋነኛ ቀይ ቅመም። ከነጭ ሽንኩርት፣ ከዝንጅብልና ከመዓዛማ ቅጠላ ቅጠሎች ጋር የተዋሃደ ሙሉ ጣዕም ያለው።',
     ingredients: ['Ground pepper (berbere)', 'Onions', 'Garlic', 'Ginger', 'Rosemary', 'Cumin', 'Basil', 'Rue', 'Mixed dried spices', 'White cumin', 'Black pepper', 'Cloves', 'Nutmeg', 'Black cumin', 'Long pepper', 'Black cardamom'] },
-  { id: 'mitmita', cat: 'blends', name: 'Mitmita (ሚጥሚጣ)', price: 7.95, weight: '200 g', tone: '#8d2c22',
+  { id: 'mitmita', cat: 'blends', name: 'Mitmita (ሚጥሚጣ)', tone: '#8d2c22',
     descEn: 'A fiery orange-red blend, traditionally served with kitfo and raw or grilled meats.',
     desc: 'ብርቱ ቀይ-ብርቱካናማ ቅመም። ከክትፎና ከጥብስ ሥጋ ጋር ይቀርባል።',
     ingredients: ['Dried bird\u2019s eye chilli', 'Korerima (Ethiopian cardamom)', 'Cloves', 'Salt'], confirm: true },
-  { id: 'mekelesha', cat: 'blends', name: 'Mekelesha (መከለሻ)', price: 7.95, weight: '100 g', tone: '#7e5c3e',
+  { id: 'mekelesha', cat: 'blends', name: 'Mekelesha (መከለሻ)', tone: '#7e5c3e',
     descEn: 'A warm, aromatic finishing blend stirred into wot at the end of cooking.',
     desc: 'በወጥ መጨረሻ ላይ የሚጨመር፣ መዓዛ ያለው ሞቅ ያለ ቅመም።',
     ingredients: ['Cinnamon', 'Cloves', 'Korerima (Ethiopian cardamom)', 'Nutmeg', 'Black pepper'], confirm: true },
-  { id: 'alicha', cat: 'blends', name: 'Alicha Blend (እርድ)', price: 7.95, weight: '150 g', tone: '#b18a3f',
+  { id: 'alicha', cat: 'blends', name: 'Alicha Blend (እርድ)', tone: '#b18a3f',
     descEn: 'A mild, golden blend for alicha wot. All the flavour, no chilli heat.',
     desc: 'ለአልጫ ወጥ የሚሆን ለስላሳ ወርቃማ ቅመም። ሙሉ ጣዕም አለው፤ ግን ብርቱ አይደለም።',
     ingredients: ['Turmeric', 'Ginger', 'Garlic', 'Black cumin', 'Cardamom'], confirm: true },
 
-  { id: 'shiro', cat: 'blends', name: 'Shiro Powder (ሽሮ)', price: 6.95, weight: '500 g', tone: '#8a6948',
-    desc: 'Finely milled chickpea powder seasoned for shiro wot. Whisk into water and simmer.',
+  { id: 'shiro', cat: 'blends', name: 'Shiro Powder (ሽሮ)', tone: '#8a6948',
+    descEn: 'Finely milled chickpea powder seasoned for shiro wot. Whisk into water and simmer.',
+    desc: 'በደቃቁ የተፈጨ፣ ለሽሮ ወጥ የተቀመመ የሽምብራ ዱቄት። በውሃ በትነው አብስለው ይጠቀሙ።',
     ingredients: ['Roasted chickpea flour', 'Broad bean flour', 'Berbere', 'Garlic', 'Ginger', 'Onion', 'Salt'], confirm: true },
-  // { id: 'shiro-spicy', cat: 'shiro', name: 'Spicy Shiro (Shiro Tegabino mix)', price: 7.50, weight: '500 g', tone: '#9a5a36',
+  // { id: 'shiro-spicy', cat: 'shiro', name: 'Spicy Shiro (Shiro Tegabino mix)', tone: '#9a5a36',
   //   descEn: 'The same smooth shiro with extra berbere for a hotter pot.',
   //   desc: 'ተጨማሪ በርበሬ የተጨመረበት፣ ለይበልጥ ብርቱ ሽሮ የሚሆን ዱቄት።',
   //   ingredients: ['Roasted chickpea flour', 'Berbere', 'Garlic', 'Ginger', 'Fenugreek', 'Salt'], confirm: true },
 
-  { id: 'genfo', cat: 'flours', name: 'Porridge Flour (ጎንፎ)', price: 5.95, weight: '1 kg', tone: '#c2a15e',
+  { id: 'genfo', cat: 'flours', name: 'Porridge Flour (ጎንፎ)', tone: '#c2a15e',
     descEn: 'Flour for genfo, the thick Ethiopian porridge eaten with spiced butter and berbere.',
     desc: 'በቅቤና በበርበሬ የሚበላ ወፍራም የኢትዮጵያ ገንፎ ለማዘጋጀት የሚሆን ዱቄት።',
     ingredients: ['Barley flour'], confirm: true },
-  { id: 'besso', cat: 'flours', name: 'Besso (በሶ)', price: 5.50, weight: '500 g', tone: '#a98a52',
+  { id: 'besso', cat: 'flours', name: 'Besso (በሶ)', tone: '#a98a52',
     descEn: 'Roasted barley flour. Mix with water, honey or spiced butter for a filling traditional drink or snack.',
     desc: 'የተቆላ የገብስ ዱቄት። ከውሃ፣ ከማር ወይም ከንጹህ ቅቤ ጋር ተደባልቆ የሚበላ ወይም የሚጠጣ ባህላዊ ምግብ።',
     ingredients: ['Roasted barley flour'], confirm: true },
-  { id: 'atmit', cat: 'flours', name: 'Atmit (እጥሚት)', price: 5.50, weight: '500 g', tone: '#b9a27a',
+  { id: 'atmit', cat: 'flours', name: 'Atmit (እጥሚት)', tone: '#b9a27a',
     descEn: 'A nourishing flour for atmit, the smooth Ethiopian porridge drink served warm and often sweetened or spiced.',
     desc: 'ለአጥሚት የሚሆን ዱቄት። ለስላሳና ሞቅ ብሎ የሚጠጣ የኢትዮጵያ ባህላዊ ገንፎ መጠጥ።',
     ingredients: ['Roasted barley flour', 'Oat flour', 'Roasted flaxseed'], confirm: true },
-  // { id: 'teff', cat: 'flours', name: 'Teff Flour', price: 6.50, weight: '1 kg', tone: '#8c684a',
+  // { id: 'teff', cat: 'flours', name: 'Teff Flour', tone: '#8c684a',
   //   descEn: 'Whole-grain teff flour, the base of injera.',
   //   desc: 'የእንጀራ መሠረት የሆነ ሙሉ የጤፍ ዱቄት።',
   //   ingredients: ['Teff flour'], confirm: true },
 
-  { id: 'korerima', cat: 'singles', name: 'Korerima (Ethiopian cardamom) (ኾረሪማ)', price: 7.50, weight: '50 g', tone: '#735735',
+  { id: 'korerima', cat: 'singles', name: 'Korerima (Ethiopian cardamom) (ኾረሪማ)', tone: '#735735',
     descEn: 'Large aromatic pods with a smoky, camphor-like warmth.',
     desc: 'ጭስ መሰል ሞቅ ያለ ጣዕምና ጠንካራ መዓዛ ያላቸው ትልልቅ የኮረሪማ ፍሬዎች።',
     ingredients: ['Korerima pods'], confirm: true },
-  { id: 'ginger', cat: 'singles', name: 'Ground Ginger (ዝንጊብል)', price: 5.50, weight: '100 g', tone: '#b66d3d',
+  { id: 'ginger', cat: 'singles', name: 'Ground Ginger (ዝንጊብል)', tone: '#b66d3d',
     descEn: 'Warm, sharp ground ginger for sauces, tea and spice blends.',
     desc: 'ለወጥ፣ ለሻይና ለቅመም ድብልቆች የሚሆን የተፈጨ ዝንጅብል።',
-    ingredients: ['Ground ginger'], confirm: true }
+    ingredients: ['Ground ginger'], confirm: true },
+
+  { id: 'honey', cat: 'others', name: 'Ethiopian Honey (ማር)', tone: '#d9a03a',
+    descEn: 'Pure Ethiopian honey. A natural sweetener for tea, bread and besso.',
+    desc: 'ንጹህ የኢትዮጵያ ማር። ለሻይ፣ ለዳቦና ለበሶ የሚሆን ተፈጥሯዊ ጣፋጭ።',
+    ingredients: ['Pure honey'], confirm: true },
+  { id: 'butter', cat: 'others', name: 'Ethiopian Butter (ቅቤ)', tone: '#e6c24a',
+    descEn: 'Rich Ethiopian butter for stews, genfo and besso. Adds warmth and aroma to traditional dishes.',
+    desc: 'ለወጥ፣ ለገንፎና ለበሶ የሚሆን የኢትዮጵያ ቅቤ። ለባህላዊ ምግቦች ሞቅ ያለ መዓዛና ጣዕም ይሰጣል።',
+    ingredients: ['Butter'], confirm: true },
+  { id: 'coffee', cat: 'others', name: 'Ethiopian Coffee (ቡና)', tone: '#5a3a24',
+    descEn: 'Ethiopian coffee, for the traditional coffee ceremony or your everyday cup.',
+    desc: 'ከኢትዮጵያ የመጣ ቡና። ለባህላዊ የቡና ሥነ ሥርዓት ወይም ለዕለት ተዕለት መጠጥ።',
+    ingredients: ['Coffee beans'], confirm: true }
 ];
 
 /* ---------------- no need to edit below ---------------- */
 const $ = s => document.querySelector(s);
-const money = n => CURRENCY + n.toFixed(2);
 
 /* Product photos are found automatically by product id:
    assets/products/<id>.jpg (also .jpeg, .png, .webp). No photo = shows the Amen logo. */
@@ -97,8 +108,7 @@ function render() {
       <div class="grid">${items.map(p => `
         <button class="card" data-id="${p.id}">
           <span class="card-img">${imageHTML(p, 'photo')}</span>
-          <span class="card-info"><span class="card-name">${p.name}</span>
-          <span class="card-meta"><span>${p.weight}</span><span class="price">${money(p.price)}</span></span></span>
+          <span class="card-info"><span class="card-name">${p.name}</span></span>
         </button>`).join('')}</div></section>`;
   }).join('');
 }
@@ -110,7 +120,6 @@ function openProduct(id) {
   $('#mImg').innerHTML = imageHTML(p, 'photo');
   $('#mCat').textContent = categories.find(c => c.id === p.cat).name;
   $('#mTitle').textContent = p.name;
-  $('#mPrice').textContent = `${money(p.price)} · ${p.weight}`;
   $('#mDesc').textContent = p.desc; $('#mDesc').lang = 'am'; $('#mDescEn').textContent = p.descEn;
   $('#mIngredients').innerHTML = p.ingredients.map(i => `<li>${i}</li>`).join('');
   $('#mNote').textContent = p.confirm ? 'Typical recipe. Final ingredients may vary by batch, please check with us if you have allergies.' : 'Please check with us if you have allergies.';
